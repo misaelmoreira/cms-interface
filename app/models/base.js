@@ -1,6 +1,6 @@
 var request = require("request");
 
-var Base = function(){}
+var Base = function(){};
 Base.prototype.baseHost = "http://localhost:3000";
 
 Base.prototype.salvar = function(callback){
@@ -32,7 +32,6 @@ Base.prototype.salvar = function(callback){
     });    
         
 };
-
 
 
 Base.prototype.todos = function(callback){   

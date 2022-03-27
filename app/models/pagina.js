@@ -1,7 +1,7 @@
 var Base = require("./base");
 
 var Pagina = function(pagina){
-    this.restName = "paginas"
+    this.restName = "paginas";
 
     if(pagina != undefined){
         this.id = pagina.id;

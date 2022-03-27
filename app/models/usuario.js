@@ -1,7 +1,7 @@
 var Base = require("./base");
 
 var Usuario = function(usuario){
-    this.restName = "usuarios"
+    this.restName = "usuarios";
 
     if(usuario != undefined){
         this.id = usuario.id;
