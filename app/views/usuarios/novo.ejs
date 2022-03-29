@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<head>
+    <title>Cadastro de Usuario</title>   
+</head>
+<body>
+
+   <h1>Usuarios</h1> 
+   <input type="button" onclick="window.location = '/usuarios';" value="Voltar">
+   <form action="/usuarios/cadastrar" method="post">
+    <fieldset>
+      <legend>Cadastro:</legend>
+      <div><%= erro %></div>
+      Nome: <input type="text" id="fname" name="nome"><br><br>
+      Login: <input type="text" id="fname" name="login"><br><br>
+      Senha: <input type="text" id="fname" name="senha"><br><br>
+      E-mail: <input type="text" id="fname" name="email"><br><br>
+      <input type="submit" value="Salvar">
+    </fieldset>
+  </form>      
+    
+</body>
+</html>
