@@ -4,8 +4,10 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "jshint": "node node_modules/jshint/bin/jshint app/*/*.js spec/app/*/*.js",
-    "test": "npx jasmine"
+    "jshint": "jshint app/*/*.js spec/app/*/*.js",
+    "behavior-test": "node node_modules/cucumber/bin/cucumber.js",
+    "unit-test": "npx jasmine",
+    "test": "node node_modules/jasmine/bin/jasmine.js && node node_modules/cucumber/bin/cucumber.js && node ./node_modules/jshint/bin/jshint app/*/*.js spec/app/*/*.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
@@ -14,8 +16,13 @@
     "http-errors": "~1.6.3",
     "ejs": "*",
     "morgan": "~1.9.1",
+    "request": "*"
+  },
+  "devDependencies": {
     "jasmine": "*",
     "jshint": "*",
-    "request": "*"
+    "chromedriver": "^2.25.1",
+    "cucumber": "^2.0.0-rc.6",
+    "selenium-webdriver": "^3.0.1"
   }
 }
