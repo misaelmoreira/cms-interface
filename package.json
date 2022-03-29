@@ -19,10 +19,10 @@
     "request": "*"
   },
   "devDependencies": {
+    "chromedriver": "^2.46.0",
+    "cucumber": "^2.0.0-rc.6",
     "jasmine": "*",
     "jshint": "*",
-    "chromedriver": "^2.25.1",
-    "cucumber": "^2.0.0-rc.6",
     "selenium-webdriver": "^3.0.1"
   }
 }
