@@ -49,7 +49,7 @@ describe("O modelo de usuario", function(){
     describe("com o metodo buscar", function(){
         it("deve buscar pelo ID", function(done){
             var usuario = new Usuario();
-            usuario.id = 40;
+            usuario.id = 42;
             usuario.buscar(function(usuario){
                 expect(usuario.erro).toBe(undefined);
                 expect(usuario.nome).toBe("teste criado pela interface");
