@@ -7,10 +7,10 @@ Como validar o código
 node node_modules/jshint/bin/jshint app/*/*.js spec/app/*/*.js
 
 Rodar os meus testes unitários (TDD) - Teste que guia o desenvolvimento
-npm run-script unit-test
+npm run unit-test
 
 Rodar os meus testes de Comportamento (BDD) - Teste que guia o desenvolvimento
-npm run-script behavior-test
+npm run behavior-test
 
 Rodar todos os meus testes
-npm run-script test
+npm run test

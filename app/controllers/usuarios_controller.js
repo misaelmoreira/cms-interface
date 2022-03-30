@@ -1,4 +1,4 @@
-const request = require("request");
+//var request = require("request");
 
 Usuario = require("../models/usuario");
 

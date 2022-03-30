@@ -25,19 +25,6 @@ defineSupportCode(function({ Given, When, Then}){
             })
         });
         callback();
-    })
-})
+    });
+});
 
-function CustomWorld(){
-    this.driver = new seleniumWebdriver.Builder()
-    .forBrowser('chrome')
-    .build();
-}
-
-defineSupportCode(function({setWorldConstructor}){
-    setWorldConstructor(CustomWorld);
-})
-
-module.exports = function() {
-    this.setDefaultTimeout(60 * 1000);
-}
