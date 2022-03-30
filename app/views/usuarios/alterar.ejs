@@ -10,7 +10,7 @@
     <fieldset>
       <legend>Alteração do Usuario: <%= usuario.nome %></legend>
       <div><%= usuario.erro %></div>
-      <%- include('../partials/campos_do_cadastro', {usuario: usuario})  %>
+      <%- include('partials/form', {usuario: usuario})  %>
       <input type="submit" value="Atualizar">
     </fieldset>
   </form>      

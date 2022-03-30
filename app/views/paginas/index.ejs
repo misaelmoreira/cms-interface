@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+    <title><%= title %></title>
+    <style>
+        table td,tr{
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        table tr:nth-child(1){
+            background-color: #ccc;
+        }
+    </style>
+    
+
+    <script>
+        var excluir = function(id){
+            if (confirm("Deseja realmente Excluir ?")){
+                window.location = window.location = '/paginas/' + id + '/excluir';
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <%- include('../shared/home') %>
+
+   <h1>Paginas</h1> 
+   <p>Dados da Pagina na API</p>
+
+   <input type="button" id="novo-registro" onclick="window.location = '/paginas/novo'" value="Novo" />
+   <table>
+        <tr>
+            <td>ID</td>
+            <td>Nome</td>  
+            <td>Preview</td>        
+            <td>Alterar</td>
+            <td>Excluir</td>
+        </tr>
+       <% for(var i = 0; i < paginas.length; i++){ 
+           var pagina = paginas[i];           
+        %>
+       <tr>
+           <td><%= pagina.id %></td>
+           <td><%= pagina.nome %></td> 
+           <td><a href="/paginas/<%= pagina.id %>/preview" target="_blank">Preview</a></td>         
+           <td><input type="button" onclick="window.location = '/paginas/<%= pagina.id %>/editar'" value="Alterar" /></td>
+           <td><input type="button" onclick= "excluir(<%= pagina.id %>)" value="Excluir" /></td>
+        </tr>
+        <% } %>
+   </table>
+    
+</body>
+</html>

@@ -1,8 +1,6 @@
-//var request = require("request");
-
 var Usuario = require("../models/usuario");
 
-var UsuarioController = {
+var UsuariosController = {
     index: function(req, res, next) {
         Usuario.todos(function(usuarios){
             res.render('usuarios/index', { 
@@ -80,4 +78,4 @@ var UsuarioController = {
 
 };
 
-module.exports = UsuarioController;
+module.exports = UsuariosController;

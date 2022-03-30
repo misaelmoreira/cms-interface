@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <title>Atualização de Pagina: <%= pagina.nome %></title>   
+</head>
+<body>
+
+   <h1>Pagina</h1> 
+   <input type="button" onclick="window.location = '/paginas';" value="Voltar">
+   <form action="/paginas/<%= pagina.id %>/atualizar" method="post">
+    <fieldset>
+      <legend>Alteração da Pagina: <%= pagina.nome %></legend>
+      <div><%= pagina.erro %></div>
+      <%- include('partials/form', {pagina: pagina})  %>
+      <input type="submit" value="Atualizar">
+    </fieldset>
+  </form>      
+    
+</body>
+</html>
