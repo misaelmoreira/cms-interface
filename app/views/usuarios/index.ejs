@@ -10,6 +10,13 @@
             background-color: #ccc;
         }
     </style>
+    <script>
+        var excluir = function(id){
+            if (confirm("Deseja realmente Excluir ?")){
+                window.location = window.location = '/usuarios/' + id + '/excluir';
+            }
+        }
+    </script>
 </head>
 <body>
 
@@ -18,24 +25,26 @@
 
    <input type="button" id="novo-registro" onclick="window.location = '/usuarios/novo'" value="Novo" />
    <table>
-       <tr>
-           <td>Nome</td>
-           <td>Login</td>
-           <td>Senha</td>
-           <td>E-mail</td>
-           <td>Alterar</td>
-           <td>Excluir</td>
-       </tr>
+        <tr>
+            <td>ID</td>
+            <td>Nome</td>
+            <td>Login</td>
+            <td>Senha</td>
+            <td>E-mail</td>
+            <td>Alterar</td>
+            <td>Excluir</td>
+        </tr>
        <% for(var i = 0; i < usuarios.length; i++){ 
            var usuario = usuarios[i];           
         %>
        <tr>
+           <td><%= usuario.id %></td>
            <td><%= usuario.nome %></td>
            <td><%= usuario.login %></td>
            <td><%= usuario.senha %></td>
            <td><%= usuario.email %></td>
-           <td><input type="button" value="Alterar" /></td>
-           <td><input type="button" value="Excluir" /></td>
+           <td><input type="button" onclick="window.location = '/usuarios/<%= usuario.id %>/editar'" value="Alterar" /></td>
+           <td><input type="button" onclick= "excluir(<%= usuario.id %>)" value="Excluir" /></td>
         </tr>
         <% } %>
    </table>

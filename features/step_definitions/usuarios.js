@@ -6,11 +6,13 @@ defineSupportCode(function({ Given, When, Then}){
     var tituloNovoCadastro = undefined;
 
     Given('that I am in the registration page {stringInDoubleQuotes}', function (url, callback) {
+        //this.driver.sleep(800);
         this.driver.get(url);
         callback();
     });
 
     Given('click on the new button', function (callback) {
+        //this.driver.sleep(800);
         this.driver.findElement({css:'#novo-registro'}).then(function(element){
             element.click();
             callback(); //serve para dizer que acabou a operação node.js
@@ -18,6 +20,7 @@ defineSupportCode(function({ Given, When, Then}){
     });     
 
     Given('fill in the field {arg1:stringInDoubleQuotes} with {arg2:stringInDoubleQuotes}', function (campo, valor, callback) {
+        //this.driver.sleep(800);
         if (campo === "nome" ){
             tituloNovoCadastro = valor + " - " + new Date().toString();
             valor = tituloNovoCadastro;

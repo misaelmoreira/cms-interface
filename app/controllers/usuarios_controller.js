@@ -1,6 +1,6 @@
 //var request = require("request");
 
-Usuario = require("../models/usuario");
+var Usuario = require("../models/usuario");
 
 var UsuarioController = {
     index: function(req, res, next) {
@@ -34,6 +34,47 @@ var UsuarioController = {
                 res.redirect('/usuarios'); 
             }            
         });         
+    },
+
+    editar: function(req, res, next) {
+        new Usuario({id:req.params.id}).buscar(function(usuario){                      
+            if(usuario.erro !== undefined ){
+                res.redirect('/usuarios/alterar?erro=' + usuario.mensagem); 
+            } 
+            else{
+                res.render('usuarios/alterar', {usuario: usuario });
+            }
+        });
+    },
+
+    atualizar: function(req, res, next) {
+        var usuario = new Usuario();
+        usuario.id = req.params.id;
+        usuario.nome = req.body.nome;
+        usuario.login = req.body.login;
+        usuario.senha = req.body.senha;
+        usuario.email = req.body.email;
+        usuario.salvar(function(retorno){
+            if(retorno.erro){              
+                res.redirect('/usuarios/novo?erro=' + retorno.mensagem); 
+            }
+            else {
+                res.redirect('/usuarios'); 
+            }            
+        });        
+    },
+
+    excluir: function(req, res, next) {
+        var usuario = new Usuario();
+        usuario.id = req.params.id;
+        usuario.excluir(function(retorno){                      
+            if(retorno.erro){
+                res.redirect('/usuarios/novo?erro=' + retorno.mensagem); 
+            } 
+            else{
+                res.redirect('/usuarios');
+            }
+        });
     }
 
 

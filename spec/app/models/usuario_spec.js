@@ -42,10 +42,33 @@ describe("O modelo de usuario", function(){
             Usuario.todos(function(retorno){
                 expect(retorno.length >= 0).toBe(true);
                 done();
-            });
-            
-                     
+            });      
         });
     });
+
+    describe("com o metodo buscar", function(){
+        it("deve buscar pelo ID", function(done){
+            var usuario = new Usuario();
+            usuario.id = 40;
+            usuario.buscar(function(usuario){
+                expect(usuario.erro).toBe(undefined);
+                expect(usuario.nome).toBe("teste criado pela interface");
+                done();
+            });            
+        });
+    });
+
+    describe("com o metodo excluir", function(){
+        it("deve excluir pelo ID", function(done){
+            var usuario = new Usuario();
+            usuario.id = 10;
+            usuario.excluir(function(retorno){
+                expect(retorno.erro).toBe(false);
+                done();
+            });            
+        });
+    });
+
+    
 
 });

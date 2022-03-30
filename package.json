@@ -7,7 +7,7 @@
     "jshint": "npx jshint app/*/*.js spec/app/*/*.js",
     "behavior-test": "node node_modules/cucumber/bin/cucumber.js",
     "unit-test": "npx jasmine",
-    "test": "node node_modules/jasmine/bin/jasmine.js && node node_modules/.bin/cucumber.js && node ./node_modules/jshint/bin/jshint app/*/*.js spec/app/*/*.js"
+    "test": "node node_modules/jasmine/bin/jasmine.js && node node_modules/cucumber/bin/cucumber.js && node node_modules/jshint/bin/jshint app/*/*.js spec/app/*/*.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",

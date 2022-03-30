@@ -10,10 +10,7 @@
     <fieldset>
       <legend>Cadastro:</legend>
       <div><%= erro %></div>
-      Nome: <input type="text" id="fname" name="nome"><br><br>
-      Login: <input type="text" id="fname" name="login"><br><br>
-      Senha: <input type="text" id="fname" name="senha"><br><br>
-      E-mail: <input type="text" id="fname" name="email"><br><br>
+      <%- include('../partials/campos_do_cadastro') %>
       <input type="submit" value="Salvar">
     </fieldset>
   </form>      
