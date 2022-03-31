@@ -1,9 +1,6 @@
-<!DOCTYPE html>
-<head>
-    <title>Cadastro de Pagina</title>   
-</head>
-<body>
+<%- include('../shared/header') %>
 
+<div class="container">
    <h1>Paginas</h1> 
    <input type="button" onclick="window.location = '/paginas';" value="Voltar">
    <form action="/paginas/cadastrar" method="post">
@@ -14,6 +11,6 @@
       <input type="submit" value="Salvar">
     </fieldset>
   </form>      
-    
-</body>
-</html>
+</div>
+
+<%- include('../shared/footer') %>

@@ -1,8 +1,6 @@
-<!DOCTYPE html>
-<head>
-    <title>Atualização de Usuario: <%= usuario.nome %></title>   
-</head>
-<body>
+<%- include('../shared/header') %>
+
+<div class="container">
 
    <h1>Usuario</h1> 
    <input type="button" onclick="window.location = '/usuarios';" value="Voltar">
@@ -15,5 +13,6 @@
     </fieldset>
   </form>      
     
-</body>
-</html>
+</div>
+
+<%- include('../shared/footer') %>
