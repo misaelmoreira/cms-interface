@@ -19,14 +19,19 @@
     "request": "*"
   },
   "devDependencies": {
-    "jshint": "*",
-    "jasmine": "*",
     "chromedriver": "^2.25.1",
     "cucumber": "^2.0.0-rc.6",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-uglify": "^5.1.0",    
+    "jasmine": "*",
+    "jshint": "*",
     "selenium-webdriver": "^3.0.1",
-    "grunt": "~0.4.5",
-    "grunt-contrib-uglify": "~0.5.0",
-    "grunt-contrib-cssmin": "*"
-
+    "gulp":"*",
+    "gulp-minify": "*",
+    "gulp-uglify": "*",
+    "gulp-rename": "*",
+    "gulp-concat": "*",
+    "gulp-sourcemaps": "*",
+    "gulp-cssmin": "*"
   }
 }
