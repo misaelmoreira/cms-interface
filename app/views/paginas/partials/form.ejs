@@ -14,7 +14,10 @@ if(this.pagina === undefined){
       selector: '#mytextarea'
     });
 </script>
-
-Nome: <input type="text" value="<%= pagina.nome %>" name="nome"><br><br>
-Conteudo: <br>
-<textarea id="mytextarea" style="width: 500px; height: 200px;" name="conteudo"> <%= pagina.conteudo %> </textarea> <br>
+<div class="campos-form">
+    <div><label for="nome">Nome:</label> <input type="text" value="<%= pagina.nome %>" name="nome" id="nome"></div>    
+    <div>
+        <label for="conteudo">Conteudo:</label>
+        <textarea id="mytextarea" style="width: 500px; height: 200px;" name="conteudo" id="conteudo"> <%= pagina.conteudo %> </textarea>
+    </div>
+</div>
