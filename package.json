@@ -7,6 +7,8 @@
     "jshint": "npx jshint app/*/*.js spec/app/*/*.js",
     "behavior-test": "node node_modules/cucumber/bin/cucumber.js",
     "unit-test": "npx jasmine",
+    "dev": "nodemon ./bin/www",
+    "gulp": "node node_modules/gulp/bin/gulp.js",
     "test": "node node_modules/jasmine/bin/jasmine.js && node node_modules/cucumber/bin/cucumber.js && node node_modules/jshint/bin/jshint app/*/*.js spec/app/*/*.js"
   },
   "dependencies": {
@@ -22,16 +24,21 @@
     "chromedriver": "^2.25.1",
     "cucumber": "^2.0.0-rc.6",
     "grunt-contrib-cssmin": "*",
-    "grunt-contrib-uglify": "^5.1.0",    
+    "grunt-contrib-uglify": "^5.1.0",
+    "gulp": "*",
+    "gulp-concat": "*",
+    "gulp-cssmin": "*",
+    "gulp-live-server": "*",
+    "gulp-livereload": "*",
+    "gulp-minify": "*",
+    "gulp-rename": "*",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "*",
+    "gulp-uglify": "*",
     "jasmine": "*",
     "jshint": "*",
-    "selenium-webdriver": "^3.0.1",
-    "gulp":"*",
-    "gulp-minify": "*",
-    "gulp-uglify": "*",
-    "gulp-rename": "*",
-    "gulp-concat": "*",
-    "gulp-sourcemaps": "*",
-    "gulp-cssmin": "*"
+    "nodemon": "*",
+    "sass": "^1.49.10",
+    "selenium-webdriver": "^3.0.1"
   }
 }

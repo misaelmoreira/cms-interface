@@ -14,3 +14,9 @@ obs. Em analise
 
 Rodar todos os meus testes
 npm run test
+
+Build os arquivos estatiscos 
+npm run gulp
+
+Rodar o nodemon
+npm run dev
