@@ -1,4 +1,6 @@
 var request = require("request");
+var NodeCache = require("node-cache");
+var myCache = new NodeCache();
 
 var Base = function(){};
 Base.prototype.baseHost = "http://localhost:3000";
@@ -58,25 +60,52 @@ Base.prototype.buscar = function(callback){
     var id = this.id;
     var restName = this.restName;
     var baseHost = this.baseHost;
-    request.head(baseHost + "/" + restName + ".json", function(){
-        token = this.response.headers.auth_token;
-        request.get({ 
-            url: baseHost + "/" + restName + "/"+ id + ".json", 
-            headers: {'auth_token': token }
-        }, function(error, response, body){
-            if( response.statusCode == 200 ) {
-                var usuario = JSON.parse(response.body);
-                callback(usuario);
-            }
-            else{        
-                var json = JSON.parse(response.body);
-                callback({
-                    erro: true,
-                    mensagem: json.erro
-                });
-            }
-        }); 
-    });    
+    var key = 'cache-' + this.restName + '-' + id;
+
+    // myCache.get( key , function(err, value){
+    //     if ( !err ){
+    //         console.log("===")
+    //         console.log(err)
+    //         if(value != undefined){
+    //             callback(value);
+    //             return;
+    //         }
+    //     } 
+
+        request.head(baseHost + "/" + restName + ".json", function(){
+            token = this.response.headers.auth_token;
+            request.get({ 
+                url: baseHost + "/" + restName + "/"+ id + ".json", 
+                headers: {'auth_token': token }
+            }, function(error, response, body){
+                if( response.statusCode == 200 ) {
+                    var value = JSON.parse(response.body); 
+                    callback(value);                   
+    
+                    /* myCache.set(key, value, 60, function(err, success){
+                        if(!err && success){
+                            callback(value);
+                        }
+                        else{
+                            callback({
+                                err: true,
+                                mensagem: "erro ao adicionar no cache"
+                            })
+                        }
+                    });  */
+                }
+                else{        
+                    var json = JSON.parse(response.body);
+                    callback({
+                        erro: true,
+                        mensagem: json.erro
+                    });
+                }
+            }); 
+        });    
+        
+    //});
+
 
 };
 
