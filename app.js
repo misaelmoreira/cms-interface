@@ -12,6 +12,15 @@ var app = express();
 app.set('views', path.join(__dirname, 'app/views'));
 app.set('view engine', 'ejs');
 
+app.use(function(req,res,next){
+  res.setHeader('Cache-Control', 'max-age=30, public'); //cache funciona para todas as instancias CDN e Browser
+  //res.setHeader('Cache-Control', 'max-age=30, private'); //cache funciona para o CDN 
+  //res.setHeader('Cache-Control', 'max-age=30, no-cache'); //nao col0ca cache no Browser
+  //res.setHeader('Cache-Control', 'max-age=30, no-store'); //nao aramazena cache no computador
+
+  next();
+});
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
