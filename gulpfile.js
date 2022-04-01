@@ -25,7 +25,7 @@ function cssBuild(){
     .pipe(gp_concat('concat.css'))
     //.pipe(gulp.dest('dist'))
     .pipe(gp_rename('aplication.min.css'))
-    .pipe(cssmin())
+    //.pipe(cssmin())
     .pipe(gp_sourcemaps.write('./'))
     .pipe(gulp.dest('public/stylesheets/sassbuild/'));
 };
