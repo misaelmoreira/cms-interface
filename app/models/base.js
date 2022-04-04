@@ -67,9 +67,9 @@ Base.prototype.buscar = function(callback){
     //         console.log("===")
     //         console.log(err)
     //         if(value != undefined){
-    //             callback(value);
-    //             return;
+    //             callback(value);              
     //         }
+    //         return;
     //     } 
 
         request.head(baseHost + "/" + restName + ".json", function(){
@@ -104,7 +104,7 @@ Base.prototype.buscar = function(callback){
             }); 
         });    
         
-    //});
+    // });
 
 
 };

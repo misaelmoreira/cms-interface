@@ -1,10 +1,9 @@
-var seleniumWebdriver = require('selenium-webdriver');
 var {defineSupportCode} = require('cucumber');
 
 defineSupportCode(function({ Given, When, Then}){
 
     Given('the initial page', function(callback){
-        this.driver.get('http://local.com.br:3001');
+        this.driver.get('http://localhost:3001');
         callback();
     });
 
@@ -14,6 +13,7 @@ defineSupportCode(function({ Given, When, Then}){
     });
 
     Then('I should have text {arg1:stringDoubleQuotes} on the page', function(title, callback){
+        this.driver.sleep(800);
         this.driver.findElements({css: 'h1'}).then(function(h1){
             h1[0].getAttribute("innerText").then(function(text){
                 if(text === title){
@@ -24,7 +24,6 @@ defineSupportCode(function({ Given, When, Then}){
                 }
             })
         });
-        callback();
     });
 });
 

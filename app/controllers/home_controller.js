@@ -1,6 +1,6 @@
 var HomeController = {
     index: function(req, res, next) {
-        res.render('home/index', { title: 'Interface do CMS' });
+        res.render('home/index', { title: "Interface do CMS" });
     }
 };
 

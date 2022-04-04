@@ -21,7 +21,7 @@
     "request": "*"
   },
   "devDependencies": {
-    "chromedriver": "^2.25.1",
+    "chromedriver": "^100.0.0",
     "cucumber": "^2.0.0-rc.6",
     "grunt-contrib-cssmin": "*",
     "grunt-contrib-uglify": "^5.1.0",
@@ -37,9 +37,9 @@
     "gulp-uglify": "*",
     "jasmine": "*",
     "jshint": "*",
+    "node-cache": "*",
     "nodemon": "*",
     "sass": "^1.49.10",
-    "selenium-webdriver": "^3.0.1",
-    "node-cache": "*"
+    "selenium-webdriver": "*"
   }
 }
